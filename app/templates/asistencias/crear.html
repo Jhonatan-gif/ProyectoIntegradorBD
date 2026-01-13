@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Registrar Asistencia</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>ID Catequizado:</label>
+        <input name="catequizado_id" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Grupo:</label>
+        <input name="grupo_id" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha:</label>
+        <input type="datetime-local" name="fecha" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Presente:</label>
+        <select name="presente" class="form-control">
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Marcado por:</label>
+        <input name="marcado_por" class="form-control" value="monica.calle">
+    </div>
+
+    <div class="mb-3">
+        <label>Dispositivo:</label>
+        <input name="dispositivo" class="form-control" value="web">
+    </div>
+
+    <div class="mb-3">
+        <label>Comentario:</label>
+        <textarea name="comentario" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Inscripción</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>ID Catequizado:</label>
+        <input name="catequizado_id" class="form-control" value="{{ data.catequizado_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Grupo:</label>
+        <input name="grupo_id" class="form-control" value="{{ data.grupo_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha de Inscripción:</label>
+        <input type="date" name="fecha_inscripcion" class="form-control"
+               value="{{ data.fecha_inscripcion|slice(0,10) }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Estado:</label>
+        <select name="estado" class="form-control">
+            <option {% if data.estado == "Activo" %}selected{% endif %}>Activo</option>
+            <option {% if data.estado == "Pendiente" %}selected{% endif %}>Pendiente</option>
+            <option {% if data.estado == "Inactivo" %}selected{% endif %}>Inactivo</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Aprobado:</label>
+        <select name="aprobado" class="form-control">
+            <option value="true" {% if data.aprobado %}selected{% endif %}>Sí</option>
+            <option value="false" {% if not data.aprobado %}selected{% endif %}>No</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

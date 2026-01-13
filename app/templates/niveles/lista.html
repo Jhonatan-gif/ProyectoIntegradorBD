@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Niveles</h2>
+
+<a href="/niveles/crear" class="btn btn-success mb-3">Nuevo Nivel</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Nivel</th>
+            <th>Descripción</th>
+            <th>Orden</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for n in data %}
+        <tr>
+            <td>{{ n._id }}</td>
+            <td>{{ n.nombre_nivel }}</td>
+            <td>{{ n.descripcion }}</td>
+            <td>{{ n.orden_nivel }}</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/niveles/editar/{{ n._id }}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

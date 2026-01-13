@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Catequizado</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Nombre:</label>
+        <input name="nombre" class="form-control" value="{{ data.nombre }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Apellido:</label>
+        <input name="apellido" class="form-control" value="{{ data.apellido }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Grupo ID:</label>
+        <input name="grupo_id" class="form-control" value="{{ data.grupo_id }}">
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

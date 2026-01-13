@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Grupos</h2>
+
+<a href="/grupos/crear" class="btn btn-success mb-3">Nuevo Grupo</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Grupo</th>
+            <th>Nivel</th>
+            <th>Catequista Principal</th>
+            <th>Horario</th>
+            <th>Periodo</th>
+            <th>Capacidad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for g in data %}
+        <tr>
+            <td>{{ g._id }}</td>
+            <td>{{ g.nombre_grupo }}</td>
+            <td>{{ g.nivel_id }}</td>
+            <td>{{ g.catequista_principal }}</td>
+            <td>{{ g.horario }}</td>
+            <td>{{ g.periodo }}</td>
+            <td>{{ g.capacidad }}</td>
+            <td>
+       <a class="btn btn-warning btn-sm" href="/grupos/editar/{{ g._id }}">Editar</a>
+<a class="btn btn-danger btn-sm" href="/grupos/eliminar/{{ g._id }}">Eliminar</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Asistencias</h2>
+
+<a href="/asistencias/crear" class="btn btn-success mb-3">Registrar Asistencia</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Catequizado</th>
+            <th>Grupo</th>
+            <th>Fecha</th>
+            <th>Presente</th>
+            <th>Marcado por</th>
+            <th>Dispositivo</th>
+            <th>Comentario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for a in data %}
+        <tr>
+            <td>{{ a._id }}</td>
+            <td>{{ a.catequizado_id }}</td>
+            <td>{{ a.grupo_id }}</td>
+            <td>{{ a.fecha }}</td>
+            <td>{{ "Sí" if a.presente else "No" }}</td>
+            <td>{{ a.marcado_por }}</td>
+            <td>{{ a.dispositivo }}</td>
+            <td>{{ a.comentario }}</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/asistencias/editar/{{ a._id }}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

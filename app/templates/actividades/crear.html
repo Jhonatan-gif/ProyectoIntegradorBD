@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Nueva Actividad</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Título:</label>
+        <input name="titulo" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Descripción:</label>
+        <textarea name="descripcion" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" class="form-control">
+    </div>
+
+    <button class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}

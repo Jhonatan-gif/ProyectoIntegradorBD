@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Catequizados</h2>
+
+<a href="/catequizados/crear" class="btn btn-success mb-3">Nuevo</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th><th>Nombre</th><th>Apellido</th><th>Grupo</th><th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for c in data %}
+        <tr>
+            <td>{{ c._id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.apellido }}</td>
+            <td>{{ c.grupo_id }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="/catequizados/editar/{{ c._id }}">Editar</a>
+                <a class="btn btn-danger btn-sm" href="/catequizados/eliminar/{{ c._id }}">Eliminar</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Nivel</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Nombre del Nivel:</label>
+        <input name="nombre_nivel" class="form-control" value="{{ data.nombre_nivel }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Descripción:</label>
+        <textarea name="descripcion" class="form-control">{{ data.descripcion }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Orden del Nivel:</label>
+        <input type="number" name="orden_nivel" class="form-control" value="{{ data.orden_nivel }}">
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

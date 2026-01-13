@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Actividades</h2>
+
+<a href="/actividades/crear" class="btn btn-success mb-3">Nueva Actividad</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for a in data %}
+        <tr>
+            <td>{{ a._id }}</td>
+            <td>{{ a.titulo }}</td>
+            <td>{{ a.descripcion }}</td>
+            <td>{{ a.fecha }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="/actividades/editar/{{ a._id }}">Editar</a>
+                <a class="btn btn-danger btn-sm" href="/actividades/eliminar/{{ a._id }}">Eliminar</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

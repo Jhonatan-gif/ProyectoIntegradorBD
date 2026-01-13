@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Asistencia</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>ID Catequizado:</label>
+        <input name="catequizado_id" class="form-control" value="{{ data.catequizado_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Grupo:</label>
+        <input name="grupo_id" class="form-control" value="{{ data.grupo_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha:</label>
+        <input type="datetime-local" name="fecha" class="form-control"
+               value="{{ data.fecha|replace(' ', 'T') }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Presente:</label>
+        <select name="presente" class="form-control">
+            <option value="true" {% if data.presente %}selected{% endif %}>Sí</option>
+            <option value="false" {% if not data.presente %}selected{% endif %}>No</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Marcado por:</label>
+        <input name="marcado_por" class="form-control" value="{{ data.marcado_por }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Dispositivo:</label>
+        <input name="dispositivo" class="form-control" value="{{ data.dispositivo }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Comentario:</label>
+        <textarea name="comentario" class="form-control">{{ data.comentario }}</textarea>
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

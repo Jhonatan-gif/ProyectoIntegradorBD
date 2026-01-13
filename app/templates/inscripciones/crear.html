@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Nueva Inscripción</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>ID Catequizado:</label>
+        <input name="catequizado_id" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Grupo:</label>
+        <input name="grupo_id" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha de Inscripción:</label>
+        <input type="date" name="fecha_inscripcion" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Estado:</label>
+        <select name="estado" class="form-control">
+            <option>Activo</option>
+            <option>Pendiente</option>
+            <option>Inactivo</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Aprobado:</label>
+        <select name="aprobado" class="form-control">
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <button class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}
+

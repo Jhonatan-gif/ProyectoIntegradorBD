@@ -1,85 +1,25 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block title %}Crear registro{% endblock %}
 
 {% block content %}
-
-<div class="card shadow-sm p-4">
-  <h3 class="mb-4">
-    <i class="fa-solid fa-user-plus"></i> 
-    {{ 'Editar Catequizado' if obj else 'Registrar Catequizado' }}
-  </h3>
-
-  <form method="post">
-    {{ form.hidden_tag() }}
-
-    <div class="row g-3">
-
-      <div class="col-md-6">
-        {{ form.nombre.label(class="form-label") }}
-        {{ form.nombre(class="form-control") }}
-      </div>
-
-      <div class="col-md-6">
-        {{ form.apellido.label(class="form-label") }}
-        {{ form.apellido(class="form-control") }}
-      </div>
-
-      <div class="col-md-4">
-        {{ form.fecha_nacimiento.label(class="form-label") }}
-        {{ form.fecha_nacimiento(class="form-control") }}
-      </div>
-
-      <div class="col-md-4">
-        {{ form.sexo.label(class="form-label") }}
-        {{ form.sexo(class="form-select") }}
-      </div>
-
-      <div class="col-md-4">
-        {{ form.telefono.label(class="form-label") }}
-        {{ form.telefono(class="form-control") }}
-      </div>
-
-      <div class="col-md-6">
-        {{ form.documento_identidad.label(class="form-label") }}
-        {{ form.documento_identidad(class="form-control") }}
-      </div>
-
-      <div class="col-md-6">
-        {{ form.email.label(class="form-label") }}
-        {{ form.email(class="form-control") }}
-      </div>
-
-      <div class="col-md-12">
-        {{ form.direccion.label(class="form-label") }}
-        {{ form.direccion(class="form-control") }}
-      </div>
-
-      <div class="col-md-6">
-        {{ form.escolaridad.label(class="form-label") }}
-        {{ form.escolaridad(class="form-control") }}
-      </div>
-
-      <div class="col-md-6">
-        {{ form.fecha_bautismo.label(class="form-label") }}
-        {{ form.fecha_bautismo(class="form-control") }}
-      </div>
-
-      <div class="col-md-12">
-        {{ form.observaciones.label(class="form-label") }}
-        {{ form.observaciones(class="form-control", rows=3) }}
-      </div>
-
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Crear registro</h5>
     </div>
+    <div class="card-body">
 
-    <div class="mt-4">
-      <button class="btn btn-success btn-rounded">
-        <i class="fa-solid fa-floppy-disk"></i> Guardar
-      </button>
-      <a href="{{ url_for('main.index') }}" class="btn btn-secondary btn-rounded">
-        Volver
-      </a>
+        <form method="POST">
+
+            <!-- CAMPOS -->
+            {% for campo in campos %}
+            <label class="fw-bold">{{ campo.label }}</label>
+            <input type="text" name="{{ campo.name }}" class="form-control mb-3" required>
+            {% endfor %}
+
+            <button class="btn btn-success">Guardar</button>
+            <a href="{{ volver }}" class="btn btn-secondary">Cancelar</a>
+
+        </form>
     </div>
-
-  </form>
 </div>
-
 {% endblock %}

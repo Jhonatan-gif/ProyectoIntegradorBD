@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Evaluación</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>ID Catequizado:</label>
+        <input name="catequizado_id" class="form-control" value="{{ data.catequizado_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Actividad:</label>
+        <input name="actividad_id" class="form-control" value="{{ data.actividad_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" class="form-control" value="{{ data.fecha|slice(0,10) }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Calificación:</label>
+        <input type="number" name="calificacion" class="form-control" value="{{ data.calificacion }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Observaciones:</label>
+        <textarea name="observaciones" class="form-control">{{ data.observaciones }}</textarea>
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

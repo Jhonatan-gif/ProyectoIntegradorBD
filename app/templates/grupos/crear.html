@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Nuevo Grupo</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Nombre del Grupo:</label>
+        <input name="nombre_grupo" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Nivel:</label>
+        <input name="nivel_id" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Catequista Principal:</label>
+        <input name="catequista_principal" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Horario:</label>
+        <input name="horario" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Periodo:</label>
+        <input name="periodo" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Capacidad:</label>
+        <input type="number" name="capacidad" class="form-control">
+    </div>
+
+    <button class="btn btn-success">Guardar</button>
+</form>
+
+{% endblock %}

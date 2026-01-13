@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Representantes</h2>
+
+<a href="/representantes/crear" class="btn btn-success mb-3">Nuevo Representante</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Catequizado</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Parentesco</th>
+            <th>Documento</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for r in data %}
+        <tr>
+            <td>{{ r._id }}</td>
+            <td>{{ r.catequizado_id }}</td>
+            <td>{{ r.nombre }}</td>
+            <td>{{ r.apellido }}</td>
+            <td>{{ r.parentesco }}</td>
+            <td>{{ r.documento_identidad }}</td>
+            <td>{{ r.telefono }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.direccion }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="/representantes/editar/{{ r._id }}">Editar</a>
+<a class="btn btn-danger btn-sm" href="/representantes/eliminar/{{ r._id }}">Eliminar</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

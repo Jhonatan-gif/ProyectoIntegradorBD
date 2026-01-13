@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Grupo</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Nombre del Grupo:</label>
+        <input name="nombre_grupo" class="form-control" value="{{ data.nombre_grupo }}">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Nivel:</label>
+        <input name="nivel_id" class="form-control" value="{{ data.nivel_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>ID Catequista Principal:</label>
+        <input name="catequista_principal" class="form-control" value="{{ data.catequista_principal }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Horario:</label>
+        <input name="horario" class="form-control" value="{{ data.horario }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Periodo:</label>
+        <input name="periodo" class="form-control" value="{{ data.periodo }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Capacidad:</label>
+        <input type="number" name="capacidad" class="form-control" value="{{ data.capacidad }}">
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

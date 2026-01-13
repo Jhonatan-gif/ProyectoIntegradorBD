@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Inscripciones</h2>
+
+<a href="/inscripciones/crear" class="btn btn-success mb-3">Nueva Inscripción</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Catequizado</th>
+            <th>Grupo</th>
+            <th>Fecha de Inscripción</th>
+            <th>Estado</th>
+            <th>Aprobado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{ i._id }}</td>
+            <td>{{ i.catequizado_id }}</td>
+            <td>{{ i.grupo_id }}</td>
+            <td>{{ i.fecha_inscripcion }}</td>
+            <td>{{ i.estado }}</td>
+            <td>{{ "Sí" if i.aprobado else "No" }}</td>
+            <td>
+                <a href="/inscripciones/editar/{{ i._id }}" class="btn btn-primary btn-sm">
+                    Editar
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

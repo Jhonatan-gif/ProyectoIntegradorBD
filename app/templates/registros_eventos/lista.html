@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Registros de Eventos (Auditoría)</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Acción</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>IP</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for r in data %}
+        <tr>
+            <td>{{ r._id }}</td>
+            <td>{{ r.usuario }}</td>
+            <td>{{ r.accion }}</td>
+            <td>{{ r.descripcion }}</td>
+            <td>{{ r.fecha }}</td>
+            <td>{{ r.ip }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

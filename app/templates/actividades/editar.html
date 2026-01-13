@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Actividad</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Título:</label>
+        <input name="titulo" class="form-control" value="{{ data.titulo }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Descripción:</label>
+        <textarea name="descripcion" class="form-control">{{ data.descripcion }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" class="form-control" value="{{ data.fecha|slice(0,10) }}">
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

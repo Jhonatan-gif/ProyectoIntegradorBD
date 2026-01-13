@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Catequista</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Nombre:</label>
+        <input name="nombre" class="form-control" value="{{ data.nombre }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Apellido:</label>
+        <input name="apellido" class="form-control" value="{{ data.apellido }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Email:</label>
+        <input name="email" class="form-control" value="{{ data.email }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Especialidad:</label>
+        <input name="especialidad" class="form-control" value="{{ data.especialidad }}">
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

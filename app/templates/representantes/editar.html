@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Editar Representante</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>ID Catequizado:</label>
+        <input name="catequizado_id" class="form-control" value="{{ data.catequizado_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Nombre:</label>
+        <input name="nombre" class="form-control" value="{{ data.nombre }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Apellido:</label>
+        <input name="apellido" class="form-control" value="{{ data.apellido }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Parentesco:</label>
+        <input name="parentesco" class="form-control" value="{{ data.parentesco }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Documento de Identidad:</label>
+        <input name="documento_identidad" class="form-control" value="{{ data.documento_identidad }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Teléfono:</label>
+        <input name="telefono" class="form-control" value="{{ data.telefono }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Email:</label>
+        <input name="email" class="form-control" value="{{ data.email }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Dirección:</label>
+        <textarea name="direccion" class="form-control">{{ data.direccion }}</textarea>
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}
+

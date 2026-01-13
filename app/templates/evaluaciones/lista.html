@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Evaluaciones</h2>
+
+<a href="/evaluaciones/crear" class="btn btn-success mb-3">Nueva Evaluación</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Catequizado</th>
+            <th>Actividad</th>
+            <th>Fecha</th>
+            <th>Calificación</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for e in data %}
+        <tr>
+            <td>{{ e._id }}</td>
+            <td>{{ e.catequizado_id }}</td>
+            <td>{{ e.actividad_id }}</td>
+            <td>{{ e.fecha }}</td>
+            <td>{{ e.calificacion }}</td>
+            <td>{{ e.observaciones }}</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/evaluaciones/editar/{{ e._id }}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
